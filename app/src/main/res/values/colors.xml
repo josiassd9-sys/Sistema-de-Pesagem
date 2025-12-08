@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Cores originais -->
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="orange">#FFFFA500</color>
+
+    <!-- Cores semânticas para theme/attrs -->
+    <color name="brand_primary">#FF6200EE</color>
+    <color name="surface_default">#FFFFFFFF</color>
+    <color name="on_surface_default">#FF000000</color>
+    <color name="surface_variant_default">#FFF2F2F2</color>
+    <color name="background_default">#FFFFFFFF</color>
+    <color name="foreground_default">#FF000000</color>
+
+    <!-- Custom app colors (usados no código sugerido) -->
+    <color name="accent_price_default">#FFD32F2F</color>
+    <color name="settings_button_bg_default">#FFEEEEEE</color>
+
+    <!-- Outline / borda padrão -->
+    <color name="outline_default">#FFBDBDBD</color>
+
+    <!-- Extras úteis -->
+    <color name="transparent">#00000000</color>
+</resources>

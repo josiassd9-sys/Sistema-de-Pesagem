@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Atributos mapeáveis localmente para cores do Material / tema -->
+    <attr name="colorSurface" format="color" />
+    <attr name="colorOnSurface" format="color" />
+    <attr name="colorSurfaceVariant" format="color" />
+    <attr name="colorPrimary" format="color" />
+    <attr name="colorOnPrimary" format="color" />
+    <attr name="colorBackground" format="color" />
+    <attr name="colorForeground" format="color" />
+
+    <!-- Atributos customizados da aplicação -->
+    <attr name="colorCustomCacamba" format="color" />
+    <attr name="colorCustomAccentPrice" format="color" />
+    <attr name="colorCustomSettingsButtonBg" format="color" />
+
+    <!-- Formas / dimensões -->
+    <attr name="shapeCornerRadius" format="dimension" />
+
+    <!-- Para usar outline nos temas (border) -->
+    <attr name="outline" format="color" />
+</resources>

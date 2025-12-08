@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarSettings"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:title="Configurações"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="top"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Temas predefinidos -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Temas predefinidos"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:paddingBottom="8dp" />
+
+            <Spinner
+                android:id="@+id/spinnerTema"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <!-- Overrides de cores (HEX) -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Personalizar cores (HEX, opcional)"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <!-- Fundo Principal -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fundo Principal (background)" />
+
+            <EditText
+                android:id="@+id/etBackgroundColor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="#RRGGBB ou vazio para padrão"
+                android:inputType="text" />
+
+            <!-- Texto Principal -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Texto Principal (foreground)" />
+
+            <EditText
+                android:id="@+id/etForegroundColor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="#RRGGBB ou vazio para padrão"
+                android:inputType="text" />
+
+            <!-- Fundo dos Cards -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Fundo dos Cards (card)" />
+
+            <EditText
+                android:id="@+id/etCardColor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="#RRGGBB ou vazio para padrão"
+                android:inputType="text" />
+
+            <!-- Cor Primária (destaques principais) -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Cor Primária (primary)" />
+
+            <EditText
+                android:id="@+id/etPrimaryColor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="#RRGGBB ou vazio para padrão"
+                android:inputType="text" />
+
+            <!-- Cor de Destaque (Preço / totais) -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Cor de Destaque (Preço / Totais)" />
+
+            <EditText
+                android:id="@+id/etAccentPriceColor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="#RRGGBB ou vazio para padrão"
+                android:inputType="text" />
+
+            <!-- Fundo Botão Configurações -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Fundo Botão Configurações" />
+
+            <EditText
+                android:id="@+id/etSettingsButtonBgColor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="#RRGGBB ou vazio para padrão"
+                android:inputType="text" />
+
+            <Button
+                android:id="@+id/btnSalvarTema"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Salvar tema" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

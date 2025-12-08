@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Tema "wrapper" usado no Manifest (pode apontar para o Padrão) -->
+    <style name="Theme.PesagemPaginaInicial" parent="AppTheme.Padrao" />
+
+    <!-- Padrão (Escuro) -->
+    <style name="AppTheme.Padrao" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">#4EE1A0</item>
+        <item name="colorPrimaryVariant">#4EE1A0</item>
+        <item name="colorOnPrimary">#F6FEFB</item>
+
+        <item name="colorSurface">#191A1B</item>          <!-- background -->
+        <item name="colorOnSurface">#FAFAFA</item>        <!-- foreground -->
+
+        <item name="colorSecondary">#242627</item>        <!-- secondary -->
+        <item name="colorOnSecondary">#FAFAFA</item>
+
+        <item name="colorSurfaceVariant">#242627</item>   <!-- input/muted -->
+        <item name="colorError">#7F1D1D</item>           <!-- destructive -->
+        <item name="colorOnError">#FAFAFA</item>
+        <item name="outline">#3F4144</item>              <!-- border -->
+
+        <item name="colorCustomAccentPrice">#FBBF24</item>
+        <item name="colorCustomSettingsButtonBg">#131415</item>
+        <item name="shapeCornerRadius">8dp</item>
+
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+    </style>
+
+    <!-- Neve (Claro) -->
+    <style name="AppTheme.Neve" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">#2563EB</item>
+        <item name="colorPrimaryVariant">#2563EB</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+
+        <item name="colorSurface">#F9FAFB</item>          <!-- background -->
+        <item name="colorOnSurface">#111827</item>        <!-- foreground -->
+
+        <item name="colorSecondary">#F3F4F6</item>        <!-- secondary -->
+        <item name="colorOnSecondary">#111827</item>
+
+        <item name="colorSurfaceVariant">#FFFFFF</item>   <!-- input -->
+        <item name="colorError">#DC2626</item>
+        <item name="colorOnError">#FFFFFF</item>
+        <item name="outline">#E5E7EB</item>               <!-- border -->
+
+        <item name="colorCustomAccentPrice">#F59E0B</item>
+        <item name="colorCustomSettingsButtonBg">#FFFFFF</item>
+        <item name="shapeCornerRadius">8dp</item>
+
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+    </style>
+
+    <!-- Cyberpunk Neon -->
+    <style name="AppTheme.CyberpunkNeon" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">#00f6ff</item>
+        <item name="colorPrimaryVariant">#00f6ff</item>
+        <item name="colorOnPrimary">#0d0221</item>
+
+        <item name="colorSurface">#0d0221</item>          <!-- background -->
+        <item name="colorOnSurface">#f0f0f0</item>        <!-- foreground -->
+
+        <item name="colorSecondary">#241440</item>        <!-- secondary -->
+        <item name="colorOnSecondary">#f0f0f0</item>
+
+        <item name="colorSurfaceVariant">#241440</item>   <!-- input -->
+        <item name="colorError">#ff003c</item>
+        <item name="colorOnError">#0d0221</item>
+        <item name="outline">#3c2b5c</item>               <!-- border -->
+
+        <item name="colorCustomCacamba">#00f6ff</item>
+        <item name="colorCustomAccentPrice">#ff00ff</item>
+        <item name="colorCustomSettingsButtonBg">#1a0c36</item>
+        <item name="shapeCornerRadius">10dp</item>
+
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+    </style>
+
+    <!-- Menta Fresca -->
+    <style name="AppTheme.MentaFresca" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">#10b981</item>
+        <item name="colorPrimaryVariant">#10b981</item>
+        <item name="colorOnPrimary">#ffffff</item>
+
+        <item name="colorSurface">#f0fdf4</item>          <!-- background -->
+        <item name="colorOnSurface">#1e293b</item>        <!-- foreground -->
+
+        <item name="colorSecondary">#ecfdf5</item>        <!-- secondary -->
+        <item name="colorOnSecondary">#1e293b</item>
+
+        <item name="colorSurfaceVariant">#ffffff</item>   <!-- input -->
+        <item name="colorError">#ef4444</item>
+        <item name="colorOnError">#ffffff</item>
+        <item name="outline">#e2e8f0</item>               <!-- border -->
+
+        <item name="colorCustomCacamba">#065f46</item>
+        <item name="colorCustomAccentPrice">#f59e0b</item>
+        <item name="colorCustomSettingsButtonBg">#ffffff</item>
+        <item name="shapeCornerRadius">8dp</item>
+
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+    </style>
+
+    <!-- Oceano Profundo -->
+    <style name="AppTheme.OceanoProfundo" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">#38bdf8</item>
+        <item name="colorPrimaryVariant">#38bdf8</item>
+        <item name="colorOnPrimary">#0f172a</item>
+
+        <item name="colorSurface">#0f172a</item>          <!-- background -->
+        <item name="colorOnSurface">#f1f5f9</item>        <!-- foreground -->
+
+        <item name="colorSecondary">#334155</item>        <!-- secondary -->
+        <item name="colorOnSecondary">#f1f5f9</item>
+
+        <item name="colorSurfaceVariant">#334155</item>   <!-- input -->
+        <item name="colorError">#f43f5e</item>
+        <item name="colorOnError">#0f172a</item>
+        <item name="outline">#334155</item>               <!-- border -->
+
+        <item name="colorCustomCacamba">#38bdf8</item>
+        <item name="colorCustomAccentPrice">#fbbf24</item>
+        <item name="colorCustomSettingsButtonBg">#1e293b</item>
+        <item name="shapeCornerRadius">10dp</item>
+
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+    </style>
+
+    <!-- Cinza Claro -->
+    <style name="AppTheme.CinzaClaro" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">#4B5563</item>          <!-- cinza escuro para destaques -->
+        <item name="colorPrimaryVariant">#374151</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+
+        <item name="colorSurface">#F5F5F5</item>          <!-- background -->
+        <item name="colorOnSurface">#111827</item>        <!-- foreground -->
+
+        <item name="colorSecondary">#E5E7EB</item>        <!-- cards suaves -->
+        <item name="colorOnSecondary">#111827</item>
+
+        <item name="colorSurfaceVariant">#FFFFFF</item>   <!-- inputs -->
+        <item name="colorError">#DC2626</item>
+        <item name="colorOnError">#FFFFFF</item>
+        <item name="outline">#D1D5DB</item>               <!-- border -->
+
+        <item name="colorCustomCacamba">#111827</item>
+        <item name="colorCustomAccentPrice">#F59E0B</item>
+        <item name="colorCustomSettingsButtonBg">#E5E7EB</item>
+        <item name="shapeCornerRadius">8dp</item>
+
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+    </style>
+
+    <!-- Cinza Médio -->
+    <style name="AppTheme.CinzaMedio" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">#6B7280</item>
+        <item name="colorPrimaryVariant">#4B5563</item>
+        <item name="colorOnPrimary">#F9FAFB</item>
+
+        <item name="colorSurface">#1F2933</item>          <!-- background cinza bem escuro -->
+        <item name="colorOnSurface">#E5E7EB</item>        <!-- texto quase branco -->
+
+        <item name="colorSecondary">#374151</item>        <!-- cartões -->
+        <item name="colorOnSecondary">#E5E7EB</item>
+
+        <item name="colorSurfaceVariant">#4B5563</item>   <!-- inputs -->
+        <item name="colorError">#EF4444</item>
+        <item name="colorOnError">#F9FAFB</item>
+        <item name="outline">#6B7280</item>               <!-- border -->
+
+        <item name="colorCustomCacamba">#E5E7EB</item>
+        <item name="colorCustomAccentPrice">#FBBF24</item>
+        <item name="colorCustomSettingsButtonBg">#374151</item>
+        <item name="shapeCornerRadius">8dp</item>
+
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+    </style>
+
+    <!-- Cinza Escuro -->
+    <style name="AppTheme.CinzaEscuro" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">#9CA3AF</item>          <!-- cinza claro para destaque em fundo escuro -->
+        <item name="colorPrimaryVariant">#6B7280</item>
+        <item name="colorOnPrimary">#111827</item>
+
+        <item name="colorSurface">#111827</item>          <!-- background quase preto -->
+        <item name="colorOnSurface">#E5E7EB</item>        <!-- texto claro -->
+
+        <item name="colorSecondary">#1F2933</item>
+        <item name="colorOnSecondary">#E5E7EB</item>
+
+        <item name="colorSurfaceVariant">#1F2933</item>   <!-- inputs -->
+        <item name="colorError">#F87171</item>
+        <item name="colorOnError">#111827</item>
+        <item name="outline">#4B5563</item>               <!-- border -->
+
+        <item name="colorCustomCacamba">#9CA3AF</item>
+        <item name="colorCustomAccentPrice">#FBBF24</item>
+        <item name="colorCustomSettingsButtonBg">#1F2933</item>
+        <item name="shapeCornerRadius">10dp</item>
+
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+    </style>
+
+</resources>
