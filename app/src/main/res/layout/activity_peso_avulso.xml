@@ -21,7 +21,7 @@
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            app:title="Peso Avulso"
+            app:title="@string/title_peso_avulso"
             app:titleTextColor="#0B243C" />
 
     </com.google.android.material.appbar.AppBarLayout>
@@ -59,13 +59,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        android:gravity="center_vertical">
+                        android:gravity="center_vertical"
+                        android:baselineAligned="false">
 
                         <TextView
                             android:id="@+id/tvPesoLabel"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Peso Atual"
+                            android:text="@string/peso_atual"
                             android:textColor="#0B243C"
                             android:textSize="14sp" />
 
@@ -75,12 +76,21 @@
                             android:layout_weight="1" />
 
                         <TextView
+                            android:id="@+id/tvConnectionStatus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:text="Desconectado"
+                            android:textColor="#D32F2F"
+                            android:textSize="12sp" />
+
+                        <TextView
                             android:id="@+id/tvLabelTara"
                             android:layout_width="40dp"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="4dp"
                             android:gravity="center"
-                            android:text="Tara"
+                            android:text="@string/tara"
                             android:textColor="#0B243C"
                             android:textSize="14sp" />
 
@@ -90,7 +100,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="12dp"
                             android:gravity="center"
-                            android:text="Bruto"
+                            android:text="@string/bruto"
                             android:textColor="#0B243C"
                             android:textSize="14sp" />
                     </LinearLayout>
@@ -100,14 +110,15 @@
                         android:layout_height="wrap_content"
                         android:gravity="center_vertical"
                         android:orientation="horizontal"
-                        android:layout_marginTop="8dp">
+                        android:layout_marginTop="8dp"
+                        android:baselineAligned="false">
 
                         <TextView
                             android:id="@+id/tvPesoValue"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="0.00"
+                            android:text="@string/peso_valor_default"
                             android:textColor="#0B243C"
                             android:textSize="32sp"
                             android:textStyle="bold" />
@@ -116,7 +127,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="4dp"
-                            android:text="kg"
+                            android:text="@string/kg"
                             android:textColor="#0B243C"
                             android:textSize="16sp" />
 
@@ -126,7 +137,7 @@
                             android:layout_height="48dp"
                             android:background="#FFFFFF"
                             android:foreground="?attr/selectableItemBackgroundBorderless"
-                            android:contentDescription="Configurações"
+                            android:contentDescription="@string/configuracoes_desc"
                             android:padding="12dp"
                             android:src="@drawable/ic_settings_black_24dp"
                             app:tint="#0B243C"
@@ -137,7 +148,7 @@
                             style="@style/Widget.AppCompat.Button.Borderless"
                             android:layout_width="48dp"
                             android:layout_height="48dp"
-                            android:contentDescription="Tara"
+                            android:contentDescription="@string/tara"
                             android:padding="12dp"
                             android:src="@drawable/ic_arrow_downward_black_24dp"
                             app:tint="#0B243C"
@@ -148,12 +159,29 @@
                             style="@style/Widget.AppCompat.Button.Borderless"
                             android:layout_width="48dp"
                             android:layout_height="48dp"
-                            android:contentDescription="Bruto"
+                            android:contentDescription="@string/bruto"
                             android:padding="12dp"
                             android:src="@drawable/ic_arrow_upward_black_24dp"
                             app:tint="#0B243C"
                             android:layout_marginStart="4dp" />
                     </LinearLayout>
+
+                    <!-- Painel de logs da balança (apenas para debug/edição) -->
+                    <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="96dp"
+                        android:layout_marginTop="8dp"
+                        android:padding="4dp"
+                        android:background="#F5F5F5">
+
+                        <TextView
+                            android:id="@+id/tvScaleLog"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textColor="#0B243C"
+                            android:textSize="12sp" />
+                    </ScrollView>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
@@ -178,7 +206,7 @@
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Cliente"
+                        android:hint="@string/cliente"
                         app:boxStrokeColor="#0B243C">
 
                         <com.google.android.material.textfield.TextInputEditText
@@ -194,7 +222,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:baselineAligned="false">
 
                         <com.google.android.material.textfield.TextInputLayout
                             android:id="@+id/tilMotorista"
@@ -203,7 +232,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:layout_marginEnd="8dp"
-                            android:hint="Motorista"
+                            android:hint="@string/motorista"
                             app:boxStrokeColor="#0B243C">
 
                             <com.google.android.material.textfield.TextInputEditText
@@ -222,7 +251,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:layout_marginEnd="8dp"
-                            android:hint="Placa"
+                            android:hint="@string/placa"
                             app:boxStrokeColor="#0B243C">
 
                             <com.google.android.material.textfield.TextInputEditText
@@ -240,7 +269,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:hint="Peso Inicial"
+                            android:hint="@string/peso_inicial"
                             app:boxStrokeColor="#0B243C">
 
                             <com.google.android.material.textfield.TextInputEditText
@@ -282,7 +311,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="CAÇAMBA 1"
+                            android:text="@string/cacamba_1"
                             android:textColor="#0B243C"
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -292,7 +321,7 @@
                             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="+"
+                            android:text="@string/btn_add_cacamba"
                             android:textColor="#0B243C" />
                     </LinearLayout>
 
@@ -302,7 +331,8 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
                         android:gravity="center_vertical"
-                        android:layout_marginTop="16dp">
+                        android:layout_marginTop="16dp"
+                        android:baselineAligned="false">
 
                         <com.google.android.material.textfield.TextInputLayout
                             android:id="@+id/tilDesconto"
@@ -310,12 +340,12 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="2"
-                            android:hint="Desconto (kg)"
+                            android:hint="@string/desconto_kg"
                             app:boxStrokeColor="#0B243C">
 
                             <com.google.android.material.textfield.TextInputEditText
                                 android:id="@+id/etDesconto"
-                                android:layout_width="match_parent"
+                                android:layout_width="161dp"
                                 android:layout_height="wrap_content"
                                 android:inputType="numberDecimal"
                                 android:textColor="#0B243C"
@@ -329,26 +359,26 @@
                         <!-- Subtotal: rótulo acima e valor abaixo, alinhado à direita -->
                         <LinearLayout
                             android:id="@+id/layoutSubtotal"
-                            android:layout_width="0dp"
+                            android:layout_width="90dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:orientation="vertical"
                             android:gravity="end"
+                            android:orientation="vertical"
                             android:paddingTop="2dp">
 
                             <TextView
                                 android:id="@+id/tvSubtotalLabel"
-                                android:layout_width="wrap_content"
+                                android:layout_width="173dp"
                                 android:layout_height="wrap_content"
-                                android:text="Subtotal"
+                                android:text="@string/subtotal"
                                 android:textColor="#0B243C"
                                 android:textSize="12sp" />
 
                             <TextView
                                 android:id="@+id/tvSubtotalValue"
-                                android:layout_width="wrap_content"
+                                android:layout_width="173dp"
                                 android:layout_height="wrap_content"
-                                android:text="0.00 kg"
+                                android:text="@string/subtotal_valor"
                                 android:textColor="#0B243C"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -366,7 +396,7 @@
                 android:layout_marginTop="16dp"
                 android:drawableStart="@drawable/ic_add_black_24dp"
                 android:drawablePadding="8dp"
-                android:text="Adicionar Caçamba"
+                android:text="@string/adicionar_cacamba"
                 android:textColor="#0B243C" />
 
             <com.google.android.material.card.MaterialCardView
@@ -388,7 +418,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Peso Líquido Total"
+                        android:text="@string/peso_liquido_total"
                         android:textColor="#0B243C"
                         android:textSize="14sp" />
 
@@ -396,7 +426,7 @@
                         android:id="@+id/tvPesoLiquidoTotal"
                         android:layout_width="364dp"
                         android:layout_height="wrap_content"
-                        android:text="0.00 kg"
+                        android:text="@string/peso_valor_default"
                         android:textColor="#0B243C"
                         android:textSize="32sp"
                         android:textStyle="bold" />
@@ -412,7 +442,8 @@
         android:background="#FFFFFF"
         android:elevation="8dp"
         android:orientation="horizontal"
-        android:padding="8dp">
+        android:padding="8dp"
+        android:baselineAligned="false">
 
         <ImageButton
             android:id="@+id/btnExcluir"
@@ -420,9 +451,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:contentDescription="Excluir"
+            android:contentDescription="@string/excluir"
             android:drawableTop="@drawable/ic_delete_black_24dp"
-            android:text="Excluir"
+            android:text="@string/excluir"
             android:tint="#0B243C" />
 
         <ImageButton
@@ -431,9 +462,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:contentDescription="Salvar"
+            android:contentDescription="@string/salvar"
             android:drawableTop="@drawable/ic_save_black_24dp"
-            android:text="Salvar"
+            android:text="@string/salvar"
             android:tint="#0B243C" />
 
         <ImageButton
@@ -442,9 +473,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:contentDescription="Enviar"
+            android:contentDescription="@string/enviar"
             android:drawableTop="@drawable/ic_cloud_upload_black_24dp"
-            android:text="Enviar"
+            android:text="@string/enviar"
             android:tint="#0B243C" />
 
         <ImageButton
@@ -453,9 +484,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:contentDescription="Imprimir"
+            android:contentDescription="@string/imprimir"
             android:drawableTop="@drawable/ic_print_black_24dp"
-            android:text="Imprimir"
+            android:text="@string/imprimir"
             android:tint="#0B243C" />
     </LinearLayout>
 

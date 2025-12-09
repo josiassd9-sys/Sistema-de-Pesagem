@@ -1,3 +1,30 @@
 <resources>
     <string name="app_name">Pesagem.Pagina.Inicial</string>
+
+    <string name="title_peso_avulso">Peso Avulso</string>
+    <string name="peso_atual">Peso Atual</string>
+    <string name="tara">Tara</string>
+    <string name="bruto">Bruto</string>
+    <string name="peso_valor_default">0.00</string>
+    <string name="kg">kg</string>
+    <string name="configuracoes_desc">Configurações</string>
+
+    <string name="cliente">Cliente</string>
+    <string name="motorista">Motorista</string>
+    <string name="placa">Placa</string>
+    <string name="peso_inicial">Peso Inicial</string>
+
+    <string name="cacamba_1">CAÇAMBA 1</string>
+    <string name="btn_add_cacamba">+</string>
+    <string name="desconto_kg">Desconto (kg)</string>
+    <string name="subtotal">Subtotal</string>
+    <string name="subtotal_valor">0.00 kg</string>
+    <string name="adicionar_cacamba">Adicionar Caçamba</string>
+
+    <string name="peso_liquido_total">Peso Líquido Total</string>
+
+    <string name="excluir">Excluir</string>
+    <string name="salvar">Salvar</string>
+    <string name="enviar">Enviar</string>
+    <string name="imprimir">Imprimir</string>
 </resources>

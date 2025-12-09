@@ -1,18 +1,45 @@
-*.iml
-.gradle
-/local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
-.DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
-local.properties
-local.properties
+# Android/IntelliJ
 .gradle/
+local.properties
+/.idea/
+/*.iml
 /build/
+/captures/
+.externalNativeBuild/
+/.cxx/
+
+# Gradle
+**/build/
+
+# Kotlin
+*.kotlin_module
+
+# Misc
+.DS_Store
+
+# Keystore
+/*.jks
+
+# Log files
+*.log
+
+# Android Studio specific
+.idea/*
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# JetBrains
+out/
+
+# Generated files
+app/build/
+
+# Ignore local gradle wrapper distributions
+.gradle/wrapper/dists/
+
+# Ignore Android Studio's run configurations
+.idea/runConfigurations

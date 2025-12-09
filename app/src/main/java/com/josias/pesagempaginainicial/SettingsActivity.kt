@@ -1,7 +1,6 @@
 package com.josias.pesagempaginainicial
 
 import android.os.Bundle
-import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.josias.pesagempaginainicial.databinding.ActivitySettingsBinding
@@ -9,106 +8,36 @@ import com.josias.pesagempaginainicial.databinding.ActivitySettingsBinding
 class SettingsActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySettingsBinding
+    private val PREFS_NAME = "pesagem_prefs"
+    private val KEY_SCALE_HOST = "key_scale_host"
+    private val KEY_SCALE_PORT = "key_scale_port"
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        // Aplica o tema salvo antes de inflar o layout
-        ThemeManager.applyTheme(this)
         super.onCreate(savedInstanceState)
-
         binding = ActivitySettingsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setSupportActionBar(binding.toolbarSettings)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        val prefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE)
+        val host = prefs.getString(KEY_SCALE_HOST, "192.168.0.100")
+        val port = prefs.getInt(KEY_SCALE_PORT, 12345)
 
-        val temas = AppTheme.values()
+        binding.etScaleHost.setText(host)
+        binding.etScalePort.setText(port.toString())
 
-        val adapter = ArrayAdapter(
-            this,
-            android.R.layout.simple_spinner_item,
-            temas.map { it.prefName }
-        ).also {
-            it.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        }
-
-        binding.spinnerTema.adapter = adapter
-
-        // Seleciona no Spinner o tema atualmente salvo
-        val temaAtual = ThemePreferences.getCurrentTheme(this)
-        val indexAtual = temas.indexOf(temaAtual).takeIf { it >= 0 } ?: 0
-        binding.spinnerTema.setSelection(indexAtual)
-
-        // Carrega overrides atuais nos EditTexts
-        loadCurrentOverrides()
-
-        binding.btnSalvarTema.setOnClickListener {
-            val pos = binding.spinnerTema.selectedItemPosition
-            val selecionado = temas[pos]
-
-            // Salva tema base
-            ThemePreferences.setCurrentTheme(this, selecionado)
-
-            // Salva overrides de cor (HEX ou limpa se vazio)
-            ThemeOverrides.setOverrideColor(
-                this,
-                ThemeOverrides.KEY_BACKGROUND,
-                binding.etBackgroundColor.text?.toString()
-            )
-            ThemeOverrides.setOverrideColor(
-                this,
-                ThemeOverrides.KEY_FOREGROUND,
-                binding.etForegroundColor.text?.toString()
-            )
-            ThemeOverrides.setOverrideColor(
-                this,
-                ThemeOverrides.KEY_CARD,
-                binding.etCardColor.text?.toString()
-            )
-            ThemeOverrides.setOverrideColor(
-                this,
-                ThemeOverrides.KEY_PRIMARY,
-                binding.etPrimaryColor.text?.toString()
-            )
-            ThemeOverrides.setOverrideColor(
-                this,
-                ThemeOverrides.KEY_ACCENT_PRICE,
-                binding.etAccentPriceColor.text?.toString()
-            )
-            ThemeOverrides.setOverrideColor(
-                this,
-                ThemeOverrides.KEY_SETTINGS_BUTTON_BG,
-                binding.etSettingsButtonBgColor.text?.toString()
-            )
-
-            Toast.makeText(
-                this,
-                "Tema '${selecionado.prefName}' salvo",
-                Toast.LENGTH_SHORT
-            ).show()
-
-            // Fecha a tela de configurações e volta para a anterior
+        binding.btnSaveScaleConfig.setOnClickListener {
+            val h = binding.etScaleHost.text?.toString() ?: ""
+            val p = binding.etScalePort.text?.toString()?.toIntOrNull() ?: 0
+            if (h.isBlank() || p <= 0) {
+                Toast.makeText(this, "Host ou porta inválidos", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            prefs.edit().putString(KEY_SCALE_HOST, h).putInt(KEY_SCALE_PORT, p).apply()
+            Toast.makeText(this, "Configurações salvas", Toast.LENGTH_SHORT).show()
             finish()
         }
-    }
 
-    private fun loadCurrentOverrides() {
-        binding.etBackgroundColor.setText(
-            ThemeOverrides.getOverrideHex(this, ThemeOverrides.KEY_BACKGROUND) ?: ""
-        )
-        binding.etForegroundColor.setText(
-            ThemeOverrides.getOverrideHex(this, ThemeOverrides.KEY_FOREGROUND) ?: ""
-        )
-        binding.etCardColor.setText(
-            ThemeOverrides.getOverrideHex(this, ThemeOverrides.KEY_CARD) ?: ""
-        )
-        binding.etPrimaryColor.setText(
-            ThemeOverrides.getOverrideHex(this, ThemeOverrides.KEY_PRIMARY) ?: ""
-        )
-        binding.etAccentPriceColor.setText(
-            ThemeOverrides.getOverrideHex(this, ThemeOverrides.KEY_ACCENT_PRICE) ?: ""
-        )
-        binding.etSettingsButtonBgColor.setText(
-            ThemeOverrides.getOverrideHex(this, ThemeOverrides.KEY_SETTINGS_BUTTON_BG) ?: ""
-        )
+        binding.btnCancelScaleConfig.setOnClickListener {
+            finish()
+        }
     }
 }

@@ -1,150 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
 
-    <com.google.android.material.appbar.AppBarLayout
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        android:text="Configuração da Balança"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:paddingBottom="8dp" />
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbarSettings"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:title="Configurações"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
-    </com.google.android.material.appbar.AppBarLayout>
-
-    <ScrollView
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilScaleHost"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="top"
-        android:layout_marginTop="?attr/actionBarSize"
-        android:padding="16dp">
+        android:layout_height="wrap_content"
+        android:hint="Host">
 
-        <LinearLayout
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etScaleHost"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- Temas predefinidos -->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Temas predefinidos"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:paddingBottom="8dp" />
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilScalePort"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Porta"
+        android:layout_marginTop="8dp">
 
-            <Spinner
-                android:id="@+id/spinnerTema"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etScalePort"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- Overrides de cores (HEX) -->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Personalizar cores (HEX, opcional)"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp">
 
-            <!-- Fundo Principal -->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Fundo Principal (background)" />
+        <Button
+            android:id="@+id/btnSaveScaleConfig"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Salvar" />
 
-            <EditText
-                android:id="@+id/etBackgroundColor"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="#RRGGBB ou vazio para padrão"
-                android:inputType="text" />
+        <Space android:layout_width="8dp" android:layout_height="wrap_content" />
 
-            <!-- Texto Principal -->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Texto Principal (foreground)" />
-
-            <EditText
-                android:id="@+id/etForegroundColor"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="#RRGGBB ou vazio para padrão"
-                android:inputType="text" />
-
-            <!-- Fundo dos Cards -->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Fundo dos Cards (card)" />
-
-            <EditText
-                android:id="@+id/etCardColor"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="#RRGGBB ou vazio para padrão"
-                android:inputType="text" />
-
-            <!-- Cor Primária (destaques principais) -->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Cor Primária (primary)" />
-
-            <EditText
-                android:id="@+id/etPrimaryColor"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="#RRGGBB ou vazio para padrão"
-                android:inputType="text" />
-
-            <!-- Cor de Destaque (Preço / totais) -->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Cor de Destaque (Preço / Totais)" />
-
-            <EditText
-                android:id="@+id/etAccentPriceColor"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="#RRGGBB ou vazio para padrão"
-                android:inputType="text" />
-
-            <!-- Fundo Botão Configurações -->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Fundo Botão Configurações" />
-
-            <EditText
-                android:id="@+id/etSettingsButtonBgColor"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="#RRGGBB ou vazio para padrão"
-                android:inputType="text" />
-
-            <Button
-                android:id="@+id/btnSalvarTema"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Salvar tema" />
-
-        </LinearLayout>
-    </ScrollView>
-
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+        <Button
+            android:id="@+id/btnCancelScaleConfig"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Cancelar" />
+    </LinearLayout>
+</LinearLayout>
