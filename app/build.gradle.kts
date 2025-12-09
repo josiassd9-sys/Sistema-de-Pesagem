@@ -12,6 +12,10 @@ apply(plugin = "kotlin-kapt")
 kapt {
     // Inclui classpath de compilação no classpath do KAPT (ajuda processors a encontrar dependências)
     includeCompileClasspath = true
+    // Exportar schema do Room durante o processamento de anotações
+    arguments {
+        arg("room.schemaLocation", "${project.projectDir}/schemas")
+    }
 }
 
 android {
